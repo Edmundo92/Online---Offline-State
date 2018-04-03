@@ -4,12 +4,47 @@
     box-sizing: border-box;
 }
 
+header{
+    height: 50px;
+    background-color: #278434;
+    overflow: hidden;
+}
+
+.menuH{
+    width: 25px;
+    height: 20px;
+    margin: 14px;
+    border-top: 2px solid white;
+    position: relative;
+}
+.menuH:after, .menuH:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid white;
+}
+.menuH:before{
+    top: 6.5px;
+}
+.menuH:after{
+    bottom: 0;
+}
+
+h1{
+    top: 40%;
+    left: 20%;
+    position: absolute;
+}
+
 .status{
     height: 20px;
     transition: .4s ease-in-out;
-    transform: translateY(-20px);
+    transform: translateY(-15px);
+    opacity: 0;
 }
 
 .stateChange{
+    opacity: 1;
     transform: translateY(0px);
 }
