@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.status{
+    height: 20px;
+    transition: .4s ease-in-out;
+    transform: translateY(-20px);
+}
+
+.stateChange{
+    transform: translateY(0px);
+}

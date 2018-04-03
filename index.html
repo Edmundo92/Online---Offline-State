@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online & Offline State</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <div class="status"></div>
+    
+    <script>
+        
+        (function(){
+           let status = document.querySelector('.status');
+            
+           function verificState(event){
+                let state = navigator.onLine ? 'online' : 'offline';
+
+                if(state === 'online'){
+                    changeStyle(status, "green", "Online");
+                }else{
+                    changeStyle(status, "red", "Offline");
+                }
+            }
+            
+            function changeStyle(element, estilo, state){
+                element.style.backgroundColor = estilo;
+                element.textContent = state;
+                EffectHide(element);
+            }
+            
+            function EffectHide(element){
+                element.classList.toggle('stateChange')
+                setTimeout(()=> element.classList.toggle('stateChange'), 1500)
+            }
+        
+            window.addEventListener('online', verificState);
+            window.addEventListener('offline', verificState); 
+            
+        })()
+    </script>
+</body>
+</html>
